@@ -19,7 +19,10 @@ def options_directory():
         print("This was not an option")
 
     return
-
+def option1_calculator():
+    userinput=input(".\n")
+def option2_calender():
+    userinput=input(".\n")
 print("This is your assistant. You have following options:\noption 1: calculator\noption 2: calender")
 
 options_directory() 
