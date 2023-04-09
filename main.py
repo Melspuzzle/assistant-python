@@ -24,20 +24,20 @@ def options_directory():
 
 def option1_calculator():
     userinput=input("Enter your calculation\n")
+    #erkennen des Operators, aufsplitten des Strings am Operator in einzelne Elemente, erkennen der Elemente als Zahl 
+    # und Berechnung und Ausgabe des Ergebnis
     if "+" in userinput: 
         interim_result=userinput.split("+")
-        print("das ist eine liste aus mehreren elementen")
-        print(interim_result)
-
-        print("das ist das erste element aus der liste")
-        print(interim_result[0])
-
-        print("das ist das zweite element aus der liste")
-        print(interim_result[1])
-    #if "-" in userinput:
-    #if "*" in userinput:
-    #if "/" in userinput:
-
+        print(f"Your result:{int(interim_result[0])+int(interim_result[1])}")
+    elif "-" in userinput:
+        interim_result=userinput.split("-")
+        print(f"Your result:{int(interim_result[0])+int(interim_result[1])}")
+    elif "*" in userinput:
+        interim_result=userinput.split("*")
+        print(f"Your result:{int(interim_result[0])+int(interim_result[1])}")
+    elif "/" in userinput:
+        interim_result=userinput.split("/")
+        print(f"Your result:{int(interim_result[0])+int(interim_result[1])}")
     return
 
 def option2_calender():
