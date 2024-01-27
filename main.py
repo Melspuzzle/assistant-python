@@ -36,7 +36,7 @@ def option1_calculator():
         interim_result=userinput.split("*")
         print(f"Your result:{int(interim_result[0])+int(interim_result[1])}")
     elif "/" in userinput:
-        interim_result=userinput.split("/")
+        interim_result=userinput.split("//")
         print(f"Your result:{int(interim_result[0])+int(interim_result[1])}")
     return
 
