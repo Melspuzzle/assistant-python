@@ -4,7 +4,7 @@
 
 def options_directory():
 
-    userinput=input("Which option do you want to use? Choose your option by number.\n")
+    userinput=input("This is your assistant. You have following options:\noption 1: calculator\noption 2: calender\nWhich option do you want to use? Choose your option by number.\n")
         # das Programm startet mit der Frage, welche Option der User nutzen möchte
         # the program starts with the question which option the user wants to use
     if userinput=="1":
@@ -17,10 +17,18 @@ def options_directory():
         #open subfunction, öffnet Unterfunktion
     elif userinput=="2":
         print("You chose option 2: The calender starts now")
+        option2_calender()
     else:
         print("This was not an option")
 
     return
+
+def repetition():
+    userinput=input("Do you want to return to the directory? Type 'y' to go back, otherwise the programme will end.\n")
+    while userinput=="y":
+        options_directory()
+        userinput=input("Do you want to return to the directory? Type 'y' to go back, otherwise the programme will end.\n")
+
 
 def option1_calculator():
     userinput=input("Enter your calculation\n")
@@ -28,21 +36,58 @@ def option1_calculator():
     # und Berechnung und Ausgabe des Ergebnis
     if "+" in userinput: 
         interim_result=userinput.split("+")
-        print(f"Your result:{int(interim_result[0])+int(interim_result[1])}")
+        result = int(interim_result[0])+int(interim_result[1])
+        print(f"Your result:"+str(result))
     elif "-" in userinput:
         interim_result=userinput.split("-")
-        print(f"Your result:{int(interim_result[0])+int(interim_result[1])}")
+        result = int(interim_result[0])-int(interim_result[1])
+        print(f"Your result:"+str(result))
     elif "*" in userinput:
         interim_result=userinput.split("*")
-        print(f"Your result:{int(interim_result[0])+int(interim_result[1])}")
+        result = int(interim_result[0])*int(interim_result[1])
+        print(f"Your result:"+str(result))
     elif "/" in userinput:
+<<<<<<< HEAD
         interim_result=userinput.split("//")
         print(f"Your result:{int(interim_result[0])+int(interim_result[1])}")
     return
+=======
+        interim_result=userinput.split("/")
+        result = int(interim_result[0])//int(interim_result[1])
+        print(f"Your result:"+str(result))
+    else: 
+        print("Please use an operator for the calculation.")
+
+    userinput=input("Would you like to continue calculating with the result?Type 1 for yes and 0 for no.\n")
+    while userinput=="1":
+        userinput=input("Enter your calculation\n"+str(result))
+        if "+" in userinput: 
+            interim_result=userinput.split("+")
+            result += int(interim_result[1])
+            print(f"Your result:"+str(result))
+        elif "-" in userinput:
+            interim_result=userinput.split("-")
+            result -=int(interim_result[1])
+            print(f"Your result:"+str(result))
+        elif "*" in userinput:
+            interim_result=userinput.split("*")
+            result*=int(interim_result[1])
+            print(f"Your result:"+str(result))
+        elif "/" in userinput:
+            interim_result=userinput.split("/")
+            result //=int(interim_result[1])
+            print(f"Your result:"+str(result))
+        else: 
+            print("Please use an operator for the calculation.")
+        userinput=input("Would you like to continue calculating with the result?Type 1 for yes and 0 for no.\n")
+    
+
+>>>>>>> a773dcf (repetition and contionous calculating with result)
 
 def option2_calender():
     userinput=input(".\n")
 
-print("This is your assistant. You have following options:\noption 1: calculator\noption 2: calender")
 
 options_directory() 
+
+repetition()
