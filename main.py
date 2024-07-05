@@ -47,11 +47,6 @@ def option1_calculator():
         result = int(interim_result[0])*int(interim_result[1])
         print(f"Your result:"+str(result))
     elif "/" in userinput:
-<<<<<<< HEAD
-        interim_result=userinput.split("//")
-        print(f"Your result:{int(interim_result[0])+int(interim_result[1])}")
-    return
-=======
         interim_result=userinput.split("/")
         result = int(interim_result[0])//int(interim_result[1])
         print(f"Your result:"+str(result))
@@ -82,7 +77,6 @@ def option1_calculator():
         userinput=input("Would you like to continue calculating with the result?Type 1 for yes and 0 for no.\n")
     
 
->>>>>>> a773dcf (repetition and contionous calculating with result)
 
 def option2_calender():
     userinput=input(".\n")
