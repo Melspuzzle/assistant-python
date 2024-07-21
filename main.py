@@ -25,5 +25,4 @@ if __name__ == "__main__":
     main()
 
 
-# fkt als verkürzen, geteilt durch 0, fehlerhandling try and except 
-# unterfunktionen auslagern und eine main bauen   
+# geteilt durch 0, 

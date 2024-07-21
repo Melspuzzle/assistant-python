@@ -29,11 +29,15 @@ def option1_calculator():
 
         elif "/" in userinput:
             interim_result = userinput.split("/")
-            if resultList!=[]:
-                result= resultList[0]
-                result//= float(interim_result[1])
-            else:
-                result= float(interim_result[0]) // float(interim_result[1])
+            if interim_result[1]=="0": 
+                print("Division with null not possible")
+                result = 0
+            else:   
+                if resultList!=[]:
+                    result= resultList[0]
+                    result//= float(interim_result[1])
+                else:
+                    result= float(interim_result[0]) // float(interim_result[1])
         else:
             print("Please use an operator for the calculation.")
             return
@@ -49,7 +53,7 @@ def option1_calculator():
         userinput = input(
                 "Would you like to continue calculating with the result?\n (y)es or (n)o \n Type X to get back to the menu.\n"
             )
-        if userinput =="y":
+        if userinput =="y" or "Y":
             if resultList!=[]:
                 resultList.clear()
             resultList.append(result)
@@ -57,7 +61,7 @@ def option1_calculator():
             userinput = input(resultList[0])
             runtime_loop="y"
 
-        elif userinput=="n":
+        elif userinput=="n" or "N":
             resultList.clear()
             userinput = input("Enter your calculation\n")
             runtime_loop="y"
